@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'website';
+  num!: any;
+
+
+
+  navFun() {
+    this.num = 1;
+
+  }
+  navFun2() {
+    this.num = 2;
+  }
+  navFun3() {
+    this.num = 3;
+  }
+  navFun4() {
+    this.num = 4;
+  }
 }

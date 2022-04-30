@@ -1,0 +1,134 @@
+<p>login works!</p>
+
+<style>
+    .er {
+        color: red;
+        left: 300px;
+        background-color: aquamarine;
+    }
+</style>
+
+<form #contactForm="ngForm" (ngSubmit)="onSubmit()"
+    class="ml-5 mt-5 p-5 alert alert-warning shadow w-25 border border-warning">
+
+    <img src="https://www.waiin.com/wp-content/uploads/2021/07/WAi-symbol-placeholder.png" class="w-50 "
+        height="60px"><span class="text-dark">Technologies</span>
+    <hr>
+    <h6 class="text-danger mt-3">Login Form</h6>
+
+    <label>firstname :</label>
+    <input type="text" class="form-control border border-warning" minlength="8" #firstname="ngModel" name="firstname"
+        required placeholder="enter firstname" ngModel>
+    <div class="er" *ngIf="!firstname.valid && (firstname?.dirty || firstname?.touched)">
+        <span *ngIf="firstname?.errors?.['required']">feild is reuired</span>
+        <span *ngIf="firstname?.errors?.['pattern']">feild is input value is fomat</span>
+        <span *ngIf="firstname?.errors?.['minlength']">feild is min length</span>
+
+    </div>
+    <label>lastname :</label>
+    <input type="lastname" class="form-control border border-warning" name="lastname" minlength="8" #lastname="ngModel"
+        placeholder="enter lastname" ngModel>
+    <div class="er" *ngIf="!lastname.valid && (lastname?.dirty || lastname?.touched)">
+        <span *ngIf="lastname?.errors?.['required']">feild is reuired</span>
+        <span *ngIf="lastname?.errors?.['pattern']">feild is input value is fomat</span>
+        <span *ngIf="lastname?.errors?.['minlength']">feild is min length</span>
+
+    </div>
+
+    <button [disabled]="!contactForm.valid" type="submit" class=" btn btn-outline-primary ml-4 mt-5">submit</button>
+    <button class=" btn btn-outline-danger ml-2 mt-5">cancel</button>
+</form>
+
+
+<pre>{{contactForm.touched}}</pre>
+<pre>{{contactForm.submitted}}</pre>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form action="" class="ml-5 mt-5 p-5 alert alert-success w-50 border border-danger">
+
+    <div class="container">
+        <h1 class="text-danger">Registration Form</h1>
+        <hr>
+
+        <div class="row">
+
+            <div class="col-md-6 p-3"><label>Candidate Name :</label>
+                <input type="text" class="form-control " name="candidate Name"
+                    placeholder="enter Candidate Name">
+            </div>
+            <div class="col-md-6 p-3"><label>company id :</label>
+                <input type="text" class="form-control " name="company id"
+                    placeholder="enter company id">
+            </div>
+
+            <div class="col-md-6 p-3"><label>email :</label>
+                <input type="text" class="form-control " name="email" placeholder="enter email">
+            </div>
+            <div class="col-md-6 p-3"><label>phone :</label>
+                <input type="phone" class="form-control " name="phone " placeholder="enter phone ">
+            </div>
+
+            <div class="col-md-4"><label>DOB :</label>
+                <input type="date" class="form-control " name="DOB">
+            </div>
+            <div class="col-md-8 mt-3">
+                <label>Gender :</label><br>
+
+                <input type="radio" class="ml-2 mr-2" name="phone " placeholder="enter phone ">
+                <label>male :</label>
+
+                <input type="radio" class="ml-2 mr-2" name="phone " placeholder="enter phone ">
+                <label>female :</label>
+
+                <input type="radio" class="ml-2 mr-2" name="phone " placeholder="enter phone ">
+                <label>other :</label>
+            </div>
+            <div class="col-md-6 p-3"><label>City :</label>
+                <select class="form-control " name="city">
+                    <option value="">choose city</option>
+                    <option>Ahmednagar</option>
+                    <option>mumbai</option>
+                    <option>pune</option>
+                    <option>satara</option>
+                    <option>nashik</option>
+                    <option>aurangbad</option>
+                    <option>jalna</option>
+                </select>
+            </div>
+
+            <div class="col-md-6 p-3 "><label>State :</label>
+                <select class="form-control " name="State">
+                    <option value="">choose state</option>
+                    <option>maharashtra</option>
+                    <option>panjab</option>
+                    <option>hariyana</option>
+                    <option>gujrat</option>
+                    <option>uttar-pradesh</option>
+                    <option>madhya-pradesh</option>
+                    <option>Asam</option>
+                </select>
+            </div>
+
+            <div class="col-md-6 p-3"><label>joining date :</label>
+                <input type="date" class="form-control " name="joining date ">
+            </div>
+
+            <div class="col-md-12">
+                <hr>
+                <button class=" btn btn-outline-info ml-4">submit</button>
+                <button class=" btn btn-outline-danger ml-2">cancel</button>
+            </div>
+
+        </div>
+
+    </div>
+</form> -->
